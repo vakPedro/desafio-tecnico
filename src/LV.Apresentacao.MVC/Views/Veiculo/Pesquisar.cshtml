@@ -1,0 +1,113 @@
+﻿@model LV.Apresentacao.MVC.Models.VeiculoViewModel
+
+<h2>Pesquisar</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    <div>
+        @if (string.IsNullOrEmpty(Model.Fabricante))
+        {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DataInicio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DataInicio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DataInicio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DataInicio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DataInicio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DataInicio, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Fidelidade, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Fidelidade, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Fidelidade, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="Pesquisar" class="btn btn-sm btn-info" aria-label="Pesquisar" name="Pesquisar" value="Pesquisar">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        Pesquisar melhor opção
+                    </button>
+                </div>
+            </div>
+        }
+        else
+        {
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.DataInicio)
+                </dt>
+                <dd>
+                    @(Model.DataInicio.ToString("dd/MM/yyyy"))
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DataFim)
+                </dt>
+                <dd>
+                    @(Model.DataFim.ToString("dd/MM/yyyy"))
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fabricante)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Fabricante)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Modelo)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Modelo)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.AnoModelo)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.AnoModelo)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Categoria)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Categoria)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Valor)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Valor)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ValorFidelidade)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ValorFidelidade)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ValorFds)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ValorFds)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ValorFidelidadeFds)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ValorFidelidadeFds)
+                </dd>
+            </dl>
+        }
+    </div>
+}

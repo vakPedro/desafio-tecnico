@@ -1,0 +1,74 @@
+﻿@model IEnumerable<LV.Apresentacao.MVC.Models.VeiculoViewModel>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+<hr />
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<table class="table">
+    <tr class="info">
+        <th>
+            @Html.DisplayNameFor(model => model.Fabricante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnoModelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorFidelidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorFds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorFidelidadeFds)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fabricante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.AnoModelo)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Categoria)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.ValorFidelidade)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.ValorFds)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.ValorFidelidadeFds)
+            </td>
+            <td class="text-center text-danger">
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

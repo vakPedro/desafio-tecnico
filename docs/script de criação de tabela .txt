@@ -1,0 +1,19 @@
+CREATE TABLE dbo."Veiculo"
+(
+    "Id" integer NOT NULL DEFAULT nextval('dbo."Veiculo_Id_seq"'::regclass),
+    "Fabricante" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "Modelo" character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    "AnoModelo" integer NOT NULL,
+    "Categoria" integer NOT NULL,
+    "Valor" real NOT NULL,
+    "ValorFidelidade" real NOT NULL,
+    "ValorFds" real NOT NULL,
+    "ValorFidelidadeFds" real NOT NULL,
+    CONSTRAINT "PK_dbo.Veiculo" PRIMARY KEY ("Id")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE dbo."Veiculo" OWNER to postgres;
