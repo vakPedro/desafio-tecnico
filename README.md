@@ -3,7 +3,7 @@ Prjeto realizado em 2019 para implementar um CRUD de uma locadora veiculo
 
 
 
-Tacnologia: 
+Tecnologia: 
 - C# (.NET Framework 4.6).
 - ORM Entity Framework (modelo Code First).
 - Injeção de dependencias com o SimpleInjector
